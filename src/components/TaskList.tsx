@@ -1,8 +1,8 @@
-import styles from './Tasks.module.css'
+import styles from './TaskList.module.css'
 
 import clipboarIcon from '../assets/clipboard.svg'
 
-export function Tasks() {
+export function TaskList() {
     return(
         <>
             <header className="container">
@@ -13,12 +13,13 @@ export function Tasks() {
                     </div>
                     <div className={styles.completedTasks}>
                         <strong>Concluídas</strong>
-                        <span>0</span>
+                        <span>2 de 5</span>
                     </div>
                 </div>
             </header>
 
             <main className="container">
+
                 <div className={styles.tasksContent}>
                     <img src={clipboarIcon} alt="Ícone de tarefas" />
                     <div>
@@ -26,6 +27,8 @@ export function Tasks() {
                         <strong>Crie tarefas e organize seus itens a fazer</strong>
                     </div>
                 </div>
+
+                
             </main>
         </>
     )
