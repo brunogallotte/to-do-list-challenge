@@ -8,15 +8,24 @@ export interface TaskProps {
     title: string
     status: 'checked' | 'unchecked'
     changeStatus?: (title: string, status: 'checked' | 'unchecked') => void
+    onDeleteTask?: (taskToDelete: TaskProps) => void
 }
 
-export function Task({ title, status, changeStatus  }: TaskProps) {
+export function Task({ title, status, changeStatus, onDeleteTask }: TaskProps) {
     function handleStatus() {
         if (changeStatus) {
             changeStatus(title, status === 'unchecked' ? 'checked' : 'unchecked')
         }
 
         console.log(status)
+    }
+
+    function handleDeleteTask() {
+        const taskToDelete = {title: title, status: status}
+
+        if(onDeleteTask) {
+            onDeleteTask(taskToDelete)
+        }
     }
 
     return(
@@ -26,7 +35,7 @@ export function Task({ title, status, changeStatus  }: TaskProps) {
                     <img src={status === 'checked' ? checkedIcon : checkBoxIcon} className={styles.checkBox} onClick={handleStatus}/>
                     <p className={status === 'checked' ? styles.checkedTask : styles.uncheckedTask}>{title}</p>
                 </div>
-                <img src={trashIcon} className={styles.trash} />
+                <img src={trashIcon} className={styles.trash} onClick={handleDeleteTask} />
             </div>
         </div>
     )

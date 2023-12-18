@@ -5,7 +5,7 @@ import { Task } from './Task'
 import { TaskProps } from './Task'
 import { useState } from 'react'
 import { InputTask } from './InputTask'
-import { HeaderTaskList, HeaderTaskListProps } from './HeaderTaskList'
+import { HeaderTaskList } from './HeaderTaskList'
 
 const Tasks: TaskProps[] = []
 
@@ -40,6 +40,14 @@ export function TaskList() {
         setTasks(updatedTasks)
     }
 
+    function onDeleteTask(taskToDelete: TaskProps) {
+        const tasksWithoutDeletedOne = tasks.filter(task => {
+            return task.title != taskToDelete.title
+        })
+
+        setTasks(tasksWithoutDeletedOne)
+    }
+
     return(
         <>
             <InputTask changeTask={changeTask}/>
@@ -49,7 +57,7 @@ export function TaskList() {
 
                 {tasks.length > 0 ? (
                     tasks.map((task: TaskProps) => (
-                        <Task key={task.title} changeStatus={changeStatus} title={task.title} status={task.status} />
+                        <Task key={task.title} changeStatus={changeStatus} onDeleteTask={onDeleteTask} title={task.title} status={task.status} />
                     ))
                 ) : (
                     <div className={styles.tasksContent}>

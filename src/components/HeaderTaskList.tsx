@@ -1,7 +1,7 @@
 import styles from './HeaderTaskList.module.css'
 import { TaskProps } from './Task'
 
-interface HeaderTaskListProps extends TaskProps {
+interface HeaderTaskListProps {
     totalTasks: number
     totalChecked: TaskProps[]
 }
