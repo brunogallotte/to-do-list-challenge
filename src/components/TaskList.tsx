@@ -1,34 +1,37 @@
-import styles from './TaskList.module.css'
-
-import clipboarIcon from '../assets/clipboard.svg'
 import { Task } from './Task'
 import { TaskProps } from './Task'
 import { useState } from 'react'
 import { InputTask } from './InputTask'
 import { HeaderTaskList } from './HeaderTaskList'
 
+import styles from './TaskList.module.css'
+
+import clipboarIcon from '../assets/clipboard.svg'
+
 const Tasks: TaskProps[] = []
 
 export function TaskList() {
     const [tasks, setTasks] = useState<TaskProps[]>(Tasks)
 
-    const totalTasks: number = tasks.length
-
     const totalChecked: TaskProps[] = tasks.filter((task) => {
-
         if(task.status === 'checked') {
             return task
         }
-
     })
-
-    console.log(totalChecked.length)
     
-    function changeTask(task: TaskProps) {
-        setTasks([...tasks, task])        
+    function addTask(task: TaskProps) {
+        for (let i = 0; i < tasks.length; i++) {
+            if (tasks[i].title === task.title) {
+              alert('Tarefa já cadastrada!')
+
+              return
+            }
+          }
+        
+          setTasks([...tasks, task])
     }
 
-    function changeStatus(title: string, status: 'checked' | 'unchecked') {
+    function changeTaskStatus(title: string, status: 'checked' | 'unchecked') {
         const updatedTasks = tasks.map(task => {
             if(task.title === title) {
                 return { ...task, status}
@@ -50,14 +53,14 @@ export function TaskList() {
 
     return(
         <>
-            <InputTask changeTask={changeTask}/>
-            <HeaderTaskList totalTasks={totalTasks} totalChecked={totalChecked}/>
+            <InputTask addTask={addTask}/>
+            <HeaderTaskList totalTasks={tasks.length} totalChecked={totalChecked}/>
 
             <main className="container">
 
                 {tasks.length > 0 ? (
                     tasks.map((task: TaskProps) => (
-                        <Task key={task.title} changeStatus={changeStatus} onDeleteTask={onDeleteTask} title={task.title} status={task.status} />
+                        <Task key={task.title} changeTaskStatus={changeTaskStatus} onDeleteTask={onDeleteTask} title={task.title} status={task.status} />
                     ))
                 ) : (
                     <div className={styles.tasksContent}>

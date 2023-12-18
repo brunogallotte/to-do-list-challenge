@@ -7,14 +7,14 @@ import trashIcon from '../assets/trashIcon.svg'
 export interface TaskProps {
     title: string
     status: 'checked' | 'unchecked'
-    changeStatus?: (title: string, status: 'checked' | 'unchecked') => void
+    changeTaskStatus?: (title: string, status: 'checked' | 'unchecked') => void
     onDeleteTask?: (taskToDelete: TaskProps) => void
 }
 
-export function Task({ title, status, changeStatus, onDeleteTask }: TaskProps) {
+export function Task({ title, status, changeTaskStatus, onDeleteTask }: TaskProps) {
     function handleStatus() {
-        if (changeStatus) {
-            changeStatus(title, status === 'unchecked' ? 'checked' : 'unchecked')
+        if (changeTaskStatus) {
+            changeTaskStatus(title, status === 'unchecked' ? 'checked' : 'unchecked')
         }
 
         console.log(status)
@@ -30,9 +30,13 @@ export function Task({ title, status, changeStatus, onDeleteTask }: TaskProps) {
 
     return(
         <div className="container">
-            <div className={styles.wrapper}>
+            <div className={status === 'checked' ? styles.wrapperChecked : styles.wrapperUnChecked}>
                 <div>
-                    <img src={status === 'checked' ? checkedIcon : checkBoxIcon} className={styles.checkBox} onClick={handleStatus}/>
+                    <img 
+                        src={status === 'checked' ? checkedIcon : checkBoxIcon}
+                        className={styles.checkBox} 
+                        onClick={handleStatus}
+                    />
                     <p className={status === 'checked' ? styles.checkedTask : styles.uncheckedTask}>{title}</p>
                 </div>
                 <img src={trashIcon} className={styles.trash} onClick={handleDeleteTask} />

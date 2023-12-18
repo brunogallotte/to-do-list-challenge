@@ -3,13 +3,14 @@ import { useState } from 'react'
 import styles from './InputTask.module.css'
 
 import plusIcon from '../assets/plus.svg'
+
 import { TaskProps } from './Task'
 
 interface InputTaskProps {
-    changeTask: (task: TaskProps) => void
+    addTask: (task: TaskProps) => void
 }
 
-export function InputTask({ changeTask }: InputTaskProps) {
+export function InputTask({ addTask }: InputTaskProps) {
     const [input, setInput] = useState<TaskProps>({title: '', status: 'unchecked'})
 
     function onChangeInput(event: React.ChangeEvent<HTMLInputElement>) {
@@ -19,7 +20,7 @@ export function InputTask({ changeTask }: InputTaskProps) {
     }
 
     function handleChangeTask() {
-        changeTask(input)
+        addTask(input)
         setInput({title: '', status: 'unchecked'})
     }
     

@@ -16,6 +16,12 @@
     border-radius: 8px;
 }
 
+.wrapper input:focus {
+    color: var(--gray-100);
+    outline-style: none;
+    border: 1px solid var(--PurpleDark, #5E60CE);
+}
+
 .wrapper button {
     font-size: 0.875rem;
     font-weight: bold;
@@ -28,4 +34,9 @@
     border-radius: 8px;
     background: var(--blue-500);
     cursor: pointer;
+    transition: background .2s;
+}
+
+.wrapper button:hover {
+    background: var(--blue-300);
 }
