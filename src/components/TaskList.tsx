@@ -5,13 +5,25 @@ import { Task } from './Task'
 import { TaskProps } from './Task'
 import { useState } from 'react'
 import { InputTask } from './InputTask'
+import { HeaderTaskList, HeaderTaskListProps } from './HeaderTaskList'
 
-const Tasks: TaskProps[] = [
-]
+const Tasks: TaskProps[] = []
 
 export function TaskList() {
     const [tasks, setTasks] = useState<TaskProps[]>(Tasks)
 
+    const totalTasks: number = tasks.length
+
+    const totalChecked: TaskProps[] = tasks.filter((task) => {
+
+        if(task.status === 'checked') {
+            return task
+        }
+
+    })
+
+    console.log(totalChecked.length)
+    
     function changeTask(task: TaskProps) {
         setTasks([...tasks, task])        
     }
@@ -31,18 +43,7 @@ export function TaskList() {
     return(
         <>
             <InputTask changeTask={changeTask}/>
-            <header className="container">
-                <div className={styles.wrapper}>
-                    <div className={styles.totalTasks}>
-                        <strong>Tarefas criadas</strong>
-                        <span>{tasks.length}</span>
-                    </div>
-                    <div className={styles.completedTasks}>
-                        <strong>Concluídas</strong>
-                        <span>2 de 5</span>
-                    </div>
-                </div>
-            </header>
+            <HeaderTaskList totalTasks={totalTasks} totalChecked={totalChecked}/>
 
             <main className="container">
 
