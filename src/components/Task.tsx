@@ -14,8 +14,6 @@ export function Task({ title, status, changeTaskStatus, onDeleteTask }: TaskProp
         if (changeTaskStatus) {
             changeTaskStatus(title, status === 'unchecked' ? 'checked' : 'unchecked')
         }
-
-        console.log(status)
     }
 
     function handleDeleteTask() {

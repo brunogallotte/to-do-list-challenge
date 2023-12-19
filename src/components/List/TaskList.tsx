@@ -1,7 +1,7 @@
-import { Task } from './Task'
-import { TaskProps } from './Task'
+import { Task } from '../Task'
+import { TaskProps } from '../Task'
 import { useState } from 'react'
-import { InputTask } from './InputTask'
+import { InputTask } from '../InputTask'
 import { HeaderTaskList } from './HeaderTaskList'
 
 import styles from './TaskList.module.css'

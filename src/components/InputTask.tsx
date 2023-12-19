@@ -28,7 +28,7 @@ export function InputTask({ addTask }: InputTaskProps) {
     return(
         <div className="container">
             <div className={styles.wrapper}>
-                <input type="text" value={input.title} placeholder="Adicione uma nova tarefa" onChange={onChangeInput} />
+                <input type="text" value={input.title} placeholder="Adicione uma nova tarefa" onChange={onChangeInput} required/>
                 <button type="button" onClick={handleChangeTask}>
                     Criar <img src={plusIcon} />
                 </button>

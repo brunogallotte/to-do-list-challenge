@@ -1,5 +1,5 @@
 import { Header } from './components/Header'
-import { TaskList } from './components/TaskList'
+import { TaskList } from './components/List/TaskList'
 import './global.css'
 
 function App() {
