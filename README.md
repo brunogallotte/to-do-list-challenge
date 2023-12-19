@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Happy" title="Happy" src=".github/logo.svg" />
+    # To-do-list challenge 01
 </h1>
 
 <p align="center">
