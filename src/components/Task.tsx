@@ -4,6 +4,8 @@ import checkBoxIcon from '../assets/checkbox.svg'
 import checkedIcon from '../assets/checkedIcon.svg'
 import trashIcon from '../assets/trashIcon.svg'
 
+import { Check, Circle, Trash } from 'phosphor-react'
+
 export interface TaskProps {
     title: string
     status: 'checked' | 'unchecked'
@@ -32,14 +34,20 @@ export function Task({ title, status, changeTaskStatus, onDeleteTask }: TaskProp
         <div className="container">
             <div className={status === 'checked' ? styles.wrapperChecked : styles.wrapperUnChecked}>
                 <div>
-                    <img 
-                        src={status === 'checked' ? checkedIcon : checkBoxIcon}
-                        className={styles.checkBox} 
-                        onClick={handleStatus}
-                    />
+                    {status === 'checked' ? (
+                        <Check 
+                            className={styles.checkedCircle} 
+                            onClick={handleStatus}
+                        />
+                    ) : (
+                        <div
+                            className={styles.circle}
+                            onClick={handleStatus}
+                        />
+                    )}
                     <p className={status === 'checked' ? styles.checkedTask : styles.uncheckedTask}>{title}</p>
                 </div>
-                <img src={trashIcon} className={styles.trash} onClick={handleDeleteTask} />
+                <Trash className={styles.trash} onClick={handleDeleteTask} />
             </div>
         </div>
     )

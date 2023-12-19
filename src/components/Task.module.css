@@ -46,18 +46,49 @@
 }
 
 .trash {
-    width: 1.5rem;
-    height: 1.5rem;
-    padding: 5px;
+    width: 1.7rem;
+    height: 1.7rem;
+    padding: 5px 5.522px 5px 6px;
+    color: var(--gray-300);
     cursor: pointer;
 }
 
-.checkBox {
+.trash:hover {
+    color: var(--red-300);
+    background: var(--gray-400);
+    border-radius: 4px;
+}
+
+.checkedCircle {
     display: flex;
-    height: 1.5rem;
     align-items: flex-start;
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--gray-100);
+    background: var(--purple-500);
+    border-radius: 50%;
     padding: 3.273px;
     cursor: pointer;
+    transition: background .2s;
+}
+
+.checkedCircle:hover {
+    background: var(--purple-300);
+}
+
+.circle {
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--blue-300);
+    border: 1px solid var(--blue-300);
+    border-radius: 50%;
+    padding: 3.273px;
+    cursor: pointer;
+}
+
+.circle:hover {
+    background: var(--blue-500);
+    opacity: 0.5;
 }
 
 
