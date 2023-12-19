@@ -37,7 +37,7 @@ Este é o primeiro desafio proposto pelo bootcamp de especialização em React.j
 Nos links abaixo você encontra o layout do projeto web. Lembrando que você precisa ter uma conta no [Figma](http://figma.com/) para acessá-lo.
 
 - [Layout Figma](https://www.figma.com/file/scVs89a5J1N1JIDIZgDHoU/ToDo-List-%E2%80%A2-Desafio-React-Copy?fuid=1250085083769040033)
-- [Vercel](https://ignite-feed-nine-khaki.vercel.app/)
+- [Vercel](https://to-do-list-challenge-ignite.vercel.app/)
 
 ## :memo: Licença
 
