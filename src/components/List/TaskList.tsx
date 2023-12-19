@@ -6,7 +6,7 @@ import { HeaderTaskList } from './HeaderTaskList'
 
 import styles from './TaskList.module.css'
 
-import clipboarIcon from '../assets/clipboard.svg'
+import clipboarIcon from '../../assets/clipboard.svg'
 
 const Tasks: TaskProps[] = []
 
