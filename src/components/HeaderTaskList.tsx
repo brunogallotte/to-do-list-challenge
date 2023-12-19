@@ -1,9 +1,8 @@
 import styles from './HeaderTaskList.module.css'
-import { TaskProps } from './Task'
 
 interface HeaderTaskListProps {
     totalTasks: number
-    totalChecked: TaskProps[]
+    totalChecked: number
 }
 
 export function HeaderTaskList({ totalTasks, totalChecked }: HeaderTaskListProps) {
@@ -16,7 +15,7 @@ export function HeaderTaskList({ totalTasks, totalChecked }: HeaderTaskListProps
                 </div>
                 <div className={styles.completedTasks}>
                     <strong>Concluídas</strong>
-                    <span>{totalChecked.length} de {totalTasks}</span>
+                    <span>{totalChecked} de {totalTasks}</span>
                 </div>
             </div>
         </header>

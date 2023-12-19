@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
-import styles from './InputTask.module.css'
+import { TaskProps } from './Task'
 
 import plusIcon from '../assets/plus.svg'
 
-import { TaskProps } from './Task'
+import styles from './InputTask.module.css'
 
 interface InputTaskProps {
     addTask: (task: TaskProps) => void

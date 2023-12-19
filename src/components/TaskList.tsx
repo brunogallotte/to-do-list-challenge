@@ -54,7 +54,7 @@ export function TaskList() {
     return(
         <>
             <InputTask addTask={addTask}/>
-            <HeaderTaskList totalTasks={tasks.length} totalChecked={totalChecked}/>
+            <HeaderTaskList totalTasks={tasks.length} totalChecked={totalChecked.length}/>
 
             <main className="container">
 

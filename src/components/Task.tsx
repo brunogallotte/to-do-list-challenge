@@ -1,10 +1,6 @@
 import styles from './Task.module.css'
 
-import checkBoxIcon from '../assets/checkbox.svg'
-import checkedIcon from '../assets/checkedIcon.svg'
-import trashIcon from '../assets/trashIcon.svg'
-
-import { Check, Circle, Trash } from 'phosphor-react'
+import { Check, Trash } from 'phosphor-react'
 
 export interface TaskProps {
     title: string
