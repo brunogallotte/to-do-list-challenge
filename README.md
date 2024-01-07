@@ -18,7 +18,7 @@
 <br>
 
 <p align="center">
-  <img alt="Happy" src="./src/assets/preview.png" width="100%">
+  <img alt="Coffe Delivery Project" src="https://github.com/brunogallotte/to-do-list-challenge/assets/131268925/443e471d-acce-4a86-b266-318e13b26157" width="100%">
 </p>
 
 ## 🚀 Tecnologias
@@ -27,17 +27,20 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [React](https://reactjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
 
 ## 💻 Projeto
 
-Este é o primeiro desafio proposto pelo bootcamp de especialização em React.js do Ignite atualizado: uma to-do-list. É relativamente simples, mas o suficiente para praticar os principais fundamentos da biblioteca. O desafio cobre somente o layout desktop!
+O projeto foi um desafio do bootcamp de especialização em React.js do Ignite, que propos a revisão e aprendizado dos seguintes temas: Estados, ContextAPI, LocalStorage, Imutabilidade do Estado, Listas e chaves do ReactJs, Propriedades e Componentização.
+
+Desenvolvido a partir do protótipo do figma, utilizando ContextAPI para gerenciar o estados globais e armazenando o carrinho (feito com useReducer) no localStorage, listagem dos produtos na tela de checkout e dados do envio do produto na tela de sucesso após preenchimento do formulário feito com React Hook Form e validado com Zod. Todos as demandas do desafio foram cumpridas com êxito! Você pode verificar <a href="https://efficient-sloth-d85.notion.site/Desafio-02-Coffee-Delivery-30e42a21fdb44b09a85244fc2c3dbdf9">clicando aqui </a>
 
 ## 🔖 Layout
 
 Nos links abaixo você encontra o layout do projeto web. Lembrando que você precisa ter uma conta no [Figma](http://figma.com/) para acessá-lo.
 
-- [Layout Figma](https://www.figma.com/file/scVs89a5J1N1JIDIZgDHoU/ToDo-List-%E2%80%A2-Desafio-React-Copy?fuid=1250085083769040033)
-- [Vercel](https://to-do-list-challenge-ignite.vercel.app/)
+- [Layout Figma](https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery/duplicate)
+- [Vercel](https://coffe-delivery-challenge.vercel.app/)
 
 ## :memo: Licença
 
